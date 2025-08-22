@@ -1,0 +1,101 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+h1, h2 {
+  text-align: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+input, textarea, button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+button {
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: #0c57c5;
+}
+
+/* 📊 統計表示 */
+#stats {
+  background: #fff;
+  padding: 10px;
+  margin: 15px auto;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  color: #1a73e8;
+}
+
+/* 📝 記録リスト */
+#recordList {
+  list-style: none;
+  padding: 0;
+}
+#recordList li {
+  background: #fff;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+#recordList li.increase { border-left: 5px solid red; }
+#recordList li.decrease { border-left: 5px solid green; }
+#recordList li.noChange { border-left: 5px solid gray; }
+
+/* 🔽 もっと見る */
+#loadMoreBtn {
+  background-color: #666;
+  color: #fff;
+  margin-top: 10px;
+}
+#loadMoreBtn:hover {
+  background-color: #444;
+}
+
+/* 🎉 メッセージ本体 */
+#message {
+  width: 90%;
+  max-width: 480px;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 10px auto;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.5s;
+}
+
+/* 表示アニメーション */
+#message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* カラー定義（IDとクラスを組み合わせる！） */
+#message.message-celebration { background-color: #28a745; color: #fff; }
+#message.message-encourage   { background-color: #ffc107; color: #333; }
+#message.message-info        { background-color: #1a73e8; color: #fff; }
