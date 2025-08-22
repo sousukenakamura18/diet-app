@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ダイエット記録アプリ</title>
   <link rel="stylesheet" href="style.css">
 
@@ -10,6 +11,11 @@
 
   <!-- PWA マニフェスト -->
   <link rel="manifest" href="manifest.json">
+
+  <!-- iOS用 PWA設定 -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="icon-192.png">
 
   <!-- Service Worker 登録 -->
   <script>
