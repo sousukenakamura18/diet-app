@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>ダイエット記録アプリ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <!-- PWA マニフェスト -->
   <link rel="manifest" href="manifest.json">
-  <!-- Service Worker 登録 -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
@@ -21,40 +19,34 @@
 </head>
 <body>
   <div class="container">
-    <h1>ダイエット記録アプリ</h1>
+    <h1> ダイエット記録アプリ </h1>
 
-    <!-- メッセージ -->
     <div id="message"></div>
 
-    <!-- 目標体重設定 -->
-    <div id="goalSetting">
-      <label for="goalInput"><strong>目標体重(kg)</strong></label>
-      <input type="number" id="goalInput" placeholder="例: 60" step="0.1">
-    </div>
-
-    <!-- 記録フォーム -->
     <form id="recordForm">
       <input type="date" id="dateInput" required>
-      <input type="number" id="weightInput" placeholder="体重(kg)" step="0.1" required>
+      <input type="number" id="weightInput" placeholder="今日の体重(kg)" step="0.1" required>
+      <div class="goal-box">
+        <label for="goalInput">🎯 目標体重(kg):</label>
+        <input type="number" id="goalInput" placeholder="例: 60" step="0.1">
+      </div>
       <textarea id="mealInput" placeholder="食事メモ"></textarea>
-      <button type="submit">記録</button>
+      <button type="submit">記録する</button>
     </form>
 
-    <!-- 統計 -->
     <div id="stats">
       <p><strong>目標達成率:</strong> <span id="achievement">0%</span></p>
       <p><strong>総減少量:</strong> <span id="totalLoss">0kg</span></p>
     </div>
 
-    <!-- グラフ -->
-    <canvas id="weightChart"></canvas>
+    <div class="chart-container">
+      <canvas id="weightChart"></canvas>
+    </div>
 
-    <!-- 記録リスト -->
-    <h2>記録一覧</h2>
+    <h2>📝 記録一覧</h2>
     <ul id="recordList"></ul>
     <button id="loadMoreBtn" style="display:none;">もっと見る</button>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
